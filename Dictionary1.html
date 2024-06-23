@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Dictionary</title>
+    <!-- link css -->
+    <!-- visit => "fontawesome.com" for icons -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js'></script>
+</head>
+
+<body>
+      <div id="app">
+        <h2 class="title">DICTIONARY </h2>
+
+        <!-- search box -->
+        <div id="searchBox">
+            <input type="text" name="" placeholder="Type To Search..." id="text">
+            <!-- search Button -->
+            <div id="search">
+                <!-- visit => "fontawesome.com" for icons -->
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+
+        <!-- content section -->
+        <div id="data">
+            <!-- important message -->
+            <div id="impo">Type Any Word & Press Enter To Get Meaning.</div>
+
+            <!-- error => if word not found -->
+            <!-- <div id="error">Can't Find THe Meaning Of <span>Code Now</span>.Please Search Another Word.</div> -->
+
+            <!-- api(data) -->
+            <!-- <div class="detail">
+                <h3 class="meaning">WORD</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, animi!</p>
+            </div> -->
+        </div>
+    </div>
+    <script>
+      // input field
+let text = document.querySelector("#text");
+// search button
+let search = document.querySelector("#search");
+// content section => main container
+let data = document.querySelector("#data");
+
+let loadData = ()=>{
+    // api for dictionary
+    let api = `https://api.dictionaryapi.dev/api/v2/entries/en/${text.value}`;
+
+    fetch(api).then(response =>response.json()).then(result =>{
+        // display result
+        data.innerHTML = `<div class="detail">
+        <h3 class="meaning">WORD</h3>
+        <p>${result[0].word}</p>
+    </div>
+    
+    <div class="detail">
+        <h3 class="meaning">DEFINITION</h3>
+        <p>${result[0].meanings[0].definitions[0].definition}</p>
+    </div>
+    
+    <div class="detail">
+        <h3 class="meaning">EXAMPLE</h3>
+        <p>${result[0].meanings[0].definitions[0].example}</p>
+    </div>
+    
+    
+    <div class="detail">
+        <h3 class="meaning">PART OF SPEECH</h3>
+        <p>${result[0].meanings[0].partOfSpeech}</p>
+    </div>
+    
+    
+    <div class="detail">
+        <h3 class="meaning">Developed by </h3>
+        <p>Devraj Poddar</p>
+    </div>`;
+    }).catch(()=>{
+        data.innerHTML = `<div id="error">Can't Find THe Meaning Of <span>${text.value}</span>.Please Search Another Word.</div>`;
+    });
+}
+
+search.addEventListener("click", ()=>{
+    if(text.value != ""){
+        // run function
+        loadData();
+    }else{
+        data.innerHTML = `<div id="impo">Type Any Word & Press Enter To Get Meaning.</div>`;
+    }
+})
+
+    </script>
+    <style>
+      /* get fonts from => fontawesome.com */
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto' , sans-serif;
+    box-sizing: border-box;
+}
+body
+{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #d6e2e9;
+}
+#app
+{
+    height: auto;
+    max-height: 400px;
+    width: 300px;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 30px;
+    border: 1px solid #00bc6230;
+    box-shadow: 1px 1px 2px #00000010,-1px -1px 2px #00bc6210;
+}
+#app .title
+{
+    text-align: center;
+    margin: 30px 0;
+    color: #008c72;
+    font-size: 22px;
+}
+#app #searchBox
+{
+    height: 40px;
+    width: 100%;
+    background: #f3f3fd;
+    display: flex;
+    flex-direction: row;
+    border-radius: 70px;
+    overflow: hidden;
+    border: 1px solid #00bc6230;
+}
+#app #searchBox input[type="text"]
+{
+    height: 100%;
+    width: 220px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #000;
+    font-size: 12px;
+}
+#app #searchBox input[type="text"]::placeholder
+{
+    color: #000;
+}
+#app #searchBox #search
+{
+    height: 100%;
+    width: 40px;
+    background: #008c72;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    color: #f3f3fd;
+    border-radius: 50%;
+}
+#app #searchBox #search
+{
+    background: linear-gradient(#008c72, #00bc62);
+}
+#data
+{
+    margin: 10px 0 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 230px;
+    overflow-y: scroll;
+}
+#data #impo
+{
+    font-size: 12px;
+    color: #008c72;
+}
+#data #error
+{
+    font-size: 12px;
+}
+#data #error span
+{
+    color: #008c72;    
+}
+#data .detail
+{
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    background: #f3f3fd;
+    border-radius: 10px;
+    border: 1px solid #00bc6230;
+    margin: 5px 0;
+    position: relative;
+}
+#data .detail h3
+{
+    color: #008c72;
+}
+#data .detail p
+{
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+/* change scroll bar */
+#data::-webkit-scrollbar
+{
+    background: transparent;
+    width: 10px;
+}
+#data::-webkit-scrollbar-thumb
+{
+    height: 30px;
+    background: linear-gradient(#008c72, #00bc62);
+    border-radius: 60px;
+}
+
+    </style>
+</body>
+
+</html>

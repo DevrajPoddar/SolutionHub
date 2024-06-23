@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solution hub</title>
+<link rel="stylesheet" href="font-awesome.min.css">
+<style>
+   iframe { 
+
+            margin: 0px; 
+
+            padding: 0px; 
+
+            height: 100%; 
+
+            border: none; 
+
+        } 
+
+          
+
+        iframe { 
+
+            display: block; 
+
+            width: 100%; 
+
+            border: none; 
+
+            overflow-y: auto; 
+
+            overflow-x: hidden; 
+
+        } 
+        
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background: url(wall.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align:  center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.content {
+  padding: 0px;
+  height: 100vh;
+  background: url(https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg?size=338&ext=jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+.button {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 100%;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Solution Hub</h2>
+  <p>Developed by Devraj Poddar</p>
+</div>
+
+<div id="navbar">
+  <a class="active" href="Solid.html" >Lateral Surface Area</a>
+  <a href="Solid2.html">Total Surface Area</a>
+  <a href="index.html" style="padding-left: 40%;">HOME</a>
+</div>
+
+<div class="content">
+  <iframe src="Lateral.html"
+
+            frameborder="0" 
+
+            marginheight="0" 
+
+            marginwidth="0" 
+
+            width="100%" 
+
+            height="100%" 
+
+            scrolling="auto"> 
+
+  </iframe> 
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>

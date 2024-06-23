@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculators</title>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+                <h1>Total Surface area</h1>
+                <br>
+                <br>
+                <br>
+                 <p id="copyright">_ Rectangle _</p><br>
+                 Length <input class="i" id="va">
+                 <br>
+                 <br>
+                 Breadth <input class="i" id="vari">
+                 <br>
+                 <br>
+                 Height <input class="i" id="varia">
+                 <br>
+                 <br>
+                 <button class="button" onclick="su()">calculate</button><br><br><input class="in" id="outp">
+                 <br>
+                 <br>
+                 Formula - 2(lb + bh + hl)
+                 <br>
+                 <br>
+                 <br>
+                 <p id="copyright">_ Square _</p><br>
+                 Side &nbsp;<input class="i" id="variab">
+                 <br>
+                 <br>
+                 <button class="button" onclick="sur()">calculate</button><br><br><input class="in" id="outpu">
+                 <br>
+                 <br>
+                 Formula - 6a^2
+                 <br>
+                 <br>
+                 <br>
+                  <p id="copyright">_ Cylinder _</p><br>
+                  radius &nbsp;<input class="i" id="variabl">
+                  <br>
+                  <br>
+                  height <input class="i" id="variable">
+                  <br>
+                  <br>
+                  <button class="button" onclick="surf()">calculate</button><br><br><input class="in" id="output">
+                  <br>
+                  <br>
+                  Formula - 2 * 22/7 * r  (r + h)
+                  <br>
+                  <br>
+                  <br>
+                  <p id="copyright">_ Cone _</p><br>
+                  Radius &nbsp;<input class="i" id="co">
+                  <br>
+                  <br>
+                  Length <input class="i" id="con">
+                  <br>
+                  <br>
+                  <button class="button" onclick="surfa()">calculate</button><br><br><input class="in" id="fe">
+                  <br>
+                  <br>
+                  Formula - 22/7 * r * (r + l)
+                  <br>
+                  <br>
+                  <br>
+                  <p id="copyright">_ Sphere _</p><br>
+                  Radius &nbsp;<input class="i" id="cone">
+                  <br>
+                  <br>
+                  <button class="button" onclick="surfac()">calculate</button><br><br><input class="in" id="fea">
+                  <br>
+                  <br>
+                  Formula - 4 * 22/7 * r * r
+                  <br>
+                  <br>
+                  <br>
+                  <p id="copyright">_ Hemisphere _</p><br>
+                  Radius &nbsp;<input class="i" id="feat">
+                  <br>
+                  <br>
+                  <button class="button" onclick="surface()">calculate</button><br><br><input class="in" id="featu">
+                  <br>
+                  <br>
+                  Formula - 3 * 22/7 * r * r
+                  <br>
+                  <br>
+                  <br>
+                  <p id="copyright">_ Shell _</p><br>
+                  Radius &nbsp;<input class="i" id="featur">
+                  <br>
+                  <br>
+                  <button class="button" onclick="surfaces()">calculate</button><br><br><input class="in" id="feature">
+                  <br>
+                  <br>
+                  Formula - 4 * 22/7 * r * r
+                  <br>
+                  <br>
+                  <br>
+        <p id="create">Created by Devraj Poddar</p>
+        <br>
+    </div>
+
+    <!--Script-->
+    <script>
+      function divide() {
+        var a, b, c;
+        a = Number(document.getElementById("first").value);
+        b = Number(document.getElementById("second").value);
+        c = a * b;
+        document.getElementById("answer").value = c;
+      }
+      function divid() {
+        var d, e;
+        d = Number(document.getElementById("firs").value);
+        e = d * d;
+        document.getElementById("answe").value = e;
+      }
+      function divi() {
+        var f, g, h;
+        f = Number(document.getElementById("fir").value);
+        g = Number(document.getElementById("seco").value);
+        h = f * g;
+        document.getElementById("answ").value = h;
+      }
+      
+      function div() {
+        var i, j;
+        i = Number(document.getElementById("fi").value);
+        
+        j = 22/7 * i * i;
+        document.getElementById("ans").value = j;
+      }
+      
+      function di() {
+        var k, l, m;
+        k = Number(document.getElementById("f").value);
+        l = Number(document.getElementById("sec").value);
+        m = 1/2 * k * l;
+        document.getElementById("an").value = m;
+      }
+      
+      function p() {
+        var z, y, x;
+        z = Number(document.getElementById("z").value);
+        y = Number(document.getElementById("y").value);
+        x = z + y + z + y;
+        document.getElementById("x").value = x;
+      }
+      function pe() {
+        var w, v;
+        w = Number(document.getElementById("w").value);
+        v = 4 * w;
+        document.getElementById("v").value = v;
+      }
+      function per() {
+        var u, t;
+        u = Number(document.getElementById("u").value);
+        t = 2 * 22/7 * u;
+        document.getElementById("t").value = t;
+      }
+      function interest() {
+        var p, r, n, q;
+        p = Number(document.getElementById("p").value);
+        r = Number(document.getElementById("r").value);
+        n = Number(document.getElementById("n").value);
+        q = p * r * n /100;
+        document.getElementById("q").value = q;
+      }
+      
+      function cuboid() {
+        var le, br, he, re;
+        le = Number(document.getElementById("le").value);
+        br = Number(document.getElementById("br").value);
+        he = Number(document.getElementById("he").value);
+        re = he * (le + br) * 2;
+        document.getElementById("re").value = re;
+      }
+      function cube() {
+        var side, res;
+        side = Number(document.getElementById("side").value);
+        res = 4 * side * side;
+        document.getElementById("res").value = res;
+      }
+      function cylinder() {
+        var ra, hei, resu;
+        ra = Number(document.getElementById("ra").value);
+        hei = Number(document.getElementById("hei").value);
+        resu = 2 * 22/7 * ra * hei;
+        document.getElementById("resu").value = resu;
+      }
+      function cone() {
+        var rad, len, resul;
+        rad = Number(document.getElementById("rad").value);
+        len = Number(document.getElementById("len").value);
+        resul = 22/7 * rad * len;
+        document.getElementById("resul").value = resul;
+      }
+      function sphere() {
+        var radi, result;
+        radi = Number(document.getElementById("radi").value);
+      
+        result = 4 * 22/7 * radi * radi;
+        document.getElementById("result").value = result;
+      }
+      function hemisphere() {
+        var radiu, ou;
+        radiu = Number(document.getElementById("radiu").value);
+      
+        ou = 2 * 22/7 * radiu * radiu;
+        document.getElementById("ou").value = ou;
+      }
+      function shell() {
+        var radius, out;
+        radius = Number(document.getElementById("radius").value);
+      
+        out = 4 * 22/7 * radius * radius;
+        document.getElementById("out").value = out;
+      }
+      function su() {
+        var va, vari, varia, outp;
+        va = Number(document.getElementById("va").value);
+        vari = Number(document.getElementById("vari").value);
+        varia = Number(document.getElementById("varia").value);
+        outp = 2 * ( va * vari + vari * varia + va * varia);
+        document.getElementById("outp").value = outp;
+      }
+      function sur() {
+        var variab, outpu;
+        variab = Number(document.getElementById("variab").value);
+      
+        outpu = 6 * variab * variab;
+        document.getElementById("outpu").value = outpu;
+      }
+      function surf() {
+        var variabl, variable, output;
+        variabl = Number(document.getElementById("variabl").value);
+        variable = Number(document.getElementById("variable").value);
+        output = 2 * 22/7 * variabl * ( variabl + variable);
+        document.getElementById("output").value = output;
+      }
+      function surfa() {
+        var co, con, fe;
+        co = Number(document.getElementById("co").value);
+       con = Number(document.getElementById("con").value);
+        fe = 22/7 * co * ( co + con);
+        document.getElementById("fe").value = fe;
+      }
+      function surfac() {
+        var cone, fea;
+        cone = Number(document.getElementById("cone").value);
+      
+        fea = 4 * 22 / 7 * cone * cone;
+        document.getElementById("fea").value = fea;
+      }
+      function surface() {
+        var feat, featu;
+        feat = Number(document.getElementById("feat").value);
+      
+        featu = 2 * 22/7 * feat * feat;
+        document.getElementById("featu").value = featu;
+      }
+      function surfaces() {
+        var featur, feature;
+        featur = Number(document.getElementById("featur").value);
+      
+        feature = 4 * 22/7 * featur * featur;
+        document.getElementById("feature").value = feature;
+      }
+    </script>
+</body>
+</html>
+
+<style>
+  *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 430vh;
+    background: linear-gradient(
+        135deg,
+        #61d954,
+        #2ebf75
+    );
+}
+
+.i  {
+  border-radius: 10px;
+  border-width: 2px;
+  text-align: center;
+}
+
+.container{
+    background-color: #ffffff;
+    padding: 40px 30px;
+    width: 50%;
+    min-width: 350px;
+    position: absolute;
+    top: 210%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    font-family: 'Poppins',sans-serif;
+    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.row span{
+    font-weight: 500;
+}
+input[type="range"]{
+    width: 70%;
+    height: 3.5px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #dcdcdc;
+    border-radius: 3px;
+    outline: none;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #1c1c1c;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#result{
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #0be881;
+}
+#category{
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+}
+#create {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+}
+#copyright {
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+
+#dev {
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.in{
+  width: 100%;
+  text-align: center;
+}
+</style>
