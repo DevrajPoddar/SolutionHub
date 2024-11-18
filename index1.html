@@ -233,3 +233,14 @@
 	<script src="script.js"></script>
 </body>
 </html>
+
+<script>
+  // Check if the page has been loaded before in this session
+  if (sessionStorage.getItem("pageVisited")) {
+    // Redirect to another webpage
+    window.location.href = "https://devilisit.github.io/";
+  } else {
+    // Mark that the page has been visited in this session
+    sessionStorage.setItem("pageVisited", "true");
+  }
+</script>
